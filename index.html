@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCB</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #e2e8f0;
+            /* Added a stunning background image */
+            background-image: url('https://wallpaperaccess.com/full/6903341.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            
+            /* Added a subtle overlay for better text readability */
+            background-color: rgba(26, 32, 44, 0.7);
+            background-blend-mode: darken;
+        }
+        .container {
+            max-width: 90%;
+            margin: auto;
+            padding: 2rem;
+            /* Changed background to semi-transparent black to show the background image */
+            background-color: rgba(31, 41, 55, 0.7);
+        }
+        .nav-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .nav-item.active {
+            background-color: #be123c;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(190, 18, 60, 0.4);
+        }
+        .card {
+            /* Changed background to semi-transparent to show the background image */
+            background-color: rgba(55, 65, 81, 0.7);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+        }
+        .player-card {
+            /* Changed background to semi-transparent to show the background image */
+            background-color: rgba(74, 85, 104, 0.7);
+            border-radius: 1rem;
+            text-align: center;
+            padding: 1rem;
+            transition: transform 0.2s ease;
+        }
+        .player-card:hover {
+            transform: scale(1.03);
+        }
+        .text-rcb-red {
+            color: #be123c;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center min-h-screen">
+    <div class="container rounded-3xl p-8 lg:p-12 shadow-2xl mt-8">
+        <!-- Header Section -->
+        <div class="flex flex-col items-center mb-10">
+            <div class="w-24 h-24 mb-4">
+                <img src="https://wallpapercave.com/wp/wp7104719.png" alt="RCB Logo" class="w-full h-full object-contain">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-rcb-red leading-tight text-center">
+                Ee Sala Cup Namdu!
+            </h1>
+            <p class="text-xl md:text-2xl mt-2 text-center text-gray-400">Royal Challengers Bengaluru</p>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="flex flex-wrap justify-center space-x-2 md:space-x-4 mb-8 text-sm md:text-base">
+            <button class="nav-item p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors" data-section="about">About</button>
+            <button class="nav-item p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors" data-section="squad">Squad</button>
+            <button class="nav-item p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors" data-section="schedule">Schedule</button>
+            <button class="nav-item p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors" data-section="news">News</button>
+            <button class="nav-item p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors" data-section="last-match">Last Match</button>
+        </nav>
+
+        <!-- Content Sections -->
+        <div id="content-sections">
+            <!-- About Section -->
+            <section id="about" class="content-section">
+                <div class="card p-8">
+                    <h2 class="text-3xl font-bold mb-4 text-rcb-red">About the Team</h2>
+                    <p class="text-lg text-gray-300">
+                        Royal Challengers Bengaluru (RCB), formerly Royal Challengers Bangalore, is a franchise cricket team based in Bengaluru, Karnataka.
+                        The team has a massive and passionate fanbase and plays its home matches at the M. Chinnaswamy Stadium. After many years of
+                        coming close, the team finally achieved its first-ever IPL title victory in the 2025 season by defeating Punjab Kings in the final.
+                        The team's success is a testament to its star-studded lineup and the unwavering support of its fans.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Squad Section -->
+            <section id="squad" class="content-section hidden">
+                <div class="card p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-rcb-red">Squad</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <!-- Player cards with placeholder images -->
+                        <div class="player-card">
+                            <img src="https://i.pinimg.com/originals/91/2a/91/912a9143884c3d400586ffcadcc39f88.png" alt="Virat Kohli" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg">Virat Kohli</p>
+                            <p class="text-sm text-gray-400">Batter</p>
+                        </div>
+                        <div class="player-card">
+                            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2024/597.png" alt="Rajat Patidar" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg">Rajat Patidar</p>
+                            <p class="text-sm text-gray-400">Captain, Batter</p>
+                        </div>
+                        <div class="player-card">
+                            <img src="https://www.sportzcraazy.com/wp-content/uploads/2020/09/mayank-agarwal-kxip.png" alt="Mayank Agarwal" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg">Mayank Agarwal</p>
+                            <p class="text-sm text-gray-400">Batter</p>
+                        </div>
+                        <div class="player-card">
+                            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/17.png" alt="Krunal Pandya" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg">Krunal Pandya</p>
+                            <p class="text-sm text-gray-400">All-rounder</p>
+                        </div>
+                        
+                         <div class="player-card">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.vx20wNN_FC0dxH_Z3Ie6LgHaHa?r=0&cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Devdutt Padikkal" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg">Devdutt Padikkal</p>
+                            <p class="text-sm text-gray-400">Batsmen</p>
+                        </div>
+                        <div class="player-card">
+                            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/1220.png" alt="Phil Salt" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg">Phil Salt</p>
+                            <p class="text-sm text-gray-400">Wicket-keeper</p>
+                        </div>
+                        <div class="player-card">
+                            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/636.png" alt="Trim David" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg">Trim David</p>
+                            <p class="text-sm text-gray-400">Batsmen</p>
+                        </div>
+                        
+                        <div class="player-card">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.5XYb3alxZza5qLrseZUvywHaHa?r=0&cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Josh Hazlewood" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg">Josh Hazlewood</p>
+                            <p class="text-sm text-gray-400">Batsmen</p>
+                        </div>
+                        <div class="player-card">
+                            <img src="https://thafd.bing.com/th/id/OIP.RCxzB5KZNmJVN65p3EtNGAHaHa?w=173&h=180&c=7&r=0&o=7&cb=thfc1&dpr=1.3&pid=1.7&rm=3" alt="Josh Hazlewood" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg">Suyash Sharma</p>
+                            <p class="text-sm text-gray-400">Spinner</p>
+                        </div>
+                        <div class="player-card">
+                            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/183.png" alt="Liam Livingstone" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg">Liam Livingstone</p>
+                            <p class="text-sm text-gray-400">Batsmen</p>
+                        </div>
+                        <div class="player-card">
+                            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/15.png" alt="Bhuvneshwar Kumar" class="rounded-full mx-auto w-28 h-28 object-cover mb-2 border-4 border-rcb-red shadow-lg">
+                            <p class="font-semibold text-lg"> Bhuvneshwar Kumar </p>
+                            <p class="text-sm text-gray-400">Bowler</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Schedule Section -->
+            <section id="schedule" class="content-section hidden">
+                <div class="card p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-rcb-red">Match Schedule (IPL 2025)</h2>
+                    <div class="space-y-4">
+                        <div class="bg-gray-700 p-4 rounded-xl flex flex-col md:flex-row justify-between items-center shadow">
+                            <div class="font-semibold">Match 1: RCB vs PBKS (Final)</div>
+                            <div class="text-gray-400">June 3, 2025</div>
+                            <div class="text-gray-400">Narendra Modi Stadium, Ahmedabad</div>
+                            <div class="font-bold text-green-400">Result: RCB won by 6 runs</div>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-xl flex flex-col md:flex-row justify-between items-center shadow">
+                            <div class="font-semibold">Match 2: RCB vs PBKS (Qualifier 1)</div>
+                            <div class="text-gray-400">May 29, 2025</div>
+                            <div class="text-gray-400">Venue Unknown</div>
+                            <div class="font-bold text-green-400">Result: RCB won by 8 wickets</div>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-xl flex flex-col md:flex-row justify-between items-center shadow">
+                            <div class="font-semibold">Match 3: RCB vs SRH</div>
+                            <div class="text-gray-400">May 23, 2025</div>
+                            <div class="text-gray-400">M. Chinnaswamy Stadium, Bengaluru</div>
+                            <div class="font-bold text-red-400">Result: SRH won by 42 runs</div>
+                        </div>
+                        <!-- You can add more recent matches here following the same pattern -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Section -->
+            <section id="news" class="content-section hidden">
+                <div class="card p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-rcb-red">Latest News</h2>
+                    <div class="space-y-6">
+                        <div class="bg-gray-700 p-6 rounded-xl shadow">
+                            <h3 class="text-xl font-bold mb-2">RCB Director discusses Mohammed Siraj's exclusion</h3>
+                            <p class="text-gray-300">
+                                In a recent statement, RCB director explained the decision to not retain Mohammed Siraj for the IPL 2025 season.
+                                This move was part of a major squad overhaul that saw the team acquire new bowling and batting talent.
+                            </p>
+                            <a href="#" class="text-rcb-red font-semibold mt-2 inline-block hover:underline">Read more...</a>
+                        </div>
+                        <div class="bg-gray-700 p-6 rounded-xl shadow">
+                            <h3 class="text-xl font-bold mb-2">Ab de Villiers hints at a possible RCB comeback</h3>
+                            <p class="text-gray-300">
+                                The legendary AB de Villiers has hinted at a potential return to the RCB setup ahead of the next IPL season,
+                                possibly in a mentoring or coaching role. This has sparked excitement among fans.
+                            </p>
+                            <a href="#" class="text-rcb-red font-semibold mt-2 inline-block hover:underline">Read more...</a>
+                        </div>
+                        <!-- You can add more news stories here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Last Match Scorecard & MoM Section -->
+            <section id="last-match" class="content-section hidden">
+                <div class="card p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-rcb-red">Last Match Summary</h2>
+
+                    <!-- Match Details -->
+                    <div class="bg-gray-700 p-6 rounded-xl shadow mb-6">
+                        <div class="text-center mb-4">
+                            <h3 class="text-2xl font-bold">RCB vs PBKS (Final)</h3>
+                            <p class="text-gray-400 text-sm">June 3, 2025 | Narendra Modi Stadium, Ahmedabad</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                            <div class="border-b md:border-r md:border-b-0 border-gray-600 pb-4 md:pb-0 md:pr-4">
+                                <h4 class="text-xl font-semibold mb-2">Scorecard</h4>
+                                <p class="text-lg"><strong>RCB:</strong> 190/9 (20 overs)</p>
+                                <p class="text-lg"><strong>PBKS:</strong> 184/7 (20 overs)</p>
+                            </div>
+                            <div class="pt-4 md:pt-0 md:pl-4">
+                                <h4 class="text-xl font-semibold mb-2">Result</h4>
+                                <p class="text-2xl text-green-400 font-bold">RCB won by 6 runs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Man of the Match -->
+                    <div class="bg-gray-700 p-6 rounded-xl shadow text-center">
+                        <h3 class="text-3xl font-bold mb-4">Man of the Match</h3>
+                        <div class="https://documents.iplt20.com/ipl/IPLHeadshot2025/17.png" alt="Krunal Pandya" class="rounded-full w-32 h-32 object-cover mb-4 border-4 border-yellow-400 shadow-lg">
+                            <p class="text-xl font-bold">Krunal Pandya</p>
+                            <p class="text-gray-400">for his brilliant performance in the final.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navItems = document.querySelectorAll('.nav-item');
+            const sections = document.querySelectorAll('.content-section');
+
+            // Function to show a specific section
+            const showSection = (sectionId) => {
+                sections.forEach(section => {
+                    if (section.id === sectionId) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+            };
+
+            // Function to set active state on the navigation button
+            const setActiveNavItem = (button) => {
+                navItems.forEach(item => item.classList.remove('active'));
+                button.classList.add('active');
+            };
+
+            // Event listener for navigation clicks
+            navItems.forEach(item => {
+                item.addEventListener('click', (event) => {
+                    const sectionId = event.target.dataset.section;
+                    showSection(sectionId);
+                    setActiveNavItem(event.target);
+                });
+            });
+
+            // Set initial active state on 'About'
+            const initialSection = 'about';
+            const initialButton = document.querySelector(`[data-section="${initialSection}"]`);
+            showSection(initialSection);
+            setActiveNavItem(initialButton);
+        });
+    </script>
+</body>
+</html>
